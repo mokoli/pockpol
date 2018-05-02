@@ -1,0 +1,3 @@
+rootProject.name = 'pocket_politics'
+
+include ':app'
