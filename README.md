@@ -33,6 +33,7 @@ Cleanup and Present Errors
 - Not sure how autorefresh works for new comments/topics/claps/callins added by other users when this user has not updated anything themselves triggering such - investigate
 - Right now, App.js does too much work. Should be turned into a navigator which in turn handles component pages made up of header, feed (ConvoContainers list), and InputPopup; as well as profile and other types as they are added
 - claps and callins have similar functionality and states, but have two different event handlers
+- Debug eventhandlers to add and receive data from db/server
 
 ### Back-end
 - Tighten up security - triple check that Express.js does in fact sanitize inputs automatically

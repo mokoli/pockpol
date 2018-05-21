@@ -14,12 +14,13 @@ import ConvoContainer from './ConvoContainer'
 export default class InputPopup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {text: '', vis: "none", };
+    this.state = {text: '', vis: "none", newId: 0 };
   }
 
   onPress = () => {
     this.setState({
-      vis: this.state.vis=="none" ? "flex" : "none"
+      vis: this.state.vis=="none" ? "flex" : "none",
+      newId: Math.floor(Math.random() * 10000),
     })
   }
 
@@ -28,7 +29,15 @@ export default class InputPopup extends React.Component {
       <View style={styles.container}>
         <TextInput style={[styles.tinput, {display: this.state.vis}]}
           placeholder="   What to say?"
-          // onSubmitEditing={(text) => boo}
+          /* onSubmitEditing={(text) => fetch(
+            'https://pocketpolitics.azurewebsites.net/topic', {
+            method: 'POST',
+            body: {
+              id: this.state.newId,
+              title: text,
+            },
+          })
+        } */
         />
         <TouchableOpacity style={styles.writeButton} onPress={this.onPress}>
           <Image
