@@ -4,17 +4,17 @@ This is a prototype for Pocket Politics, a mobile app for promoting political en
 
 Code Base Structure
 -------------------
-| pocket_politics (front-end codebase)
-    | android (android-specific build mechanism)
-    | ios (ios-specific build mechanism)
-    | js (where the views, styles and assets live)
-        | components (smaller view modules)
-            % ConvoContainer.js (handles single topic rendering and state maintenance including topic text, claps, callins and comments)
-            % InputPopup.js (renders pencil icon and handles text input for topic creation)
-        | img (image assets folder)
-    % App.js (main view container for front-end app, loads other views)
-    % Index.js (registers App.js as main view container for app)
-| PocketPolitics (back-end codebase hosted on Microsoft Azure platform)
+- | pocket_politics (front-end codebase)
+    - | android (android-specific build mechanism)
+    - | ios (ios-specific build mechanism)
+    - | js (where the views, styles and assets live)
+        - | components (smaller view modules)
+            - % ConvoContainer.js (handles single topic rendering and state maintenance including topic text, claps, callins and comments)
+            - % InputPopup.js (renders pencil icon and handles text input for topic creation)
+        - | img (image assets folder)
+    - % App.js (main view container for front-end app, loads other views)
+    - % Index.js (registers App.js as main view container for app)
+- | PocketPolitics (back-end codebase hosted on Microsoft Azure platform)
 
 
 Cleanup and Present Errors
