@@ -1,29 +1,63 @@
 /**
+ * Pocket Politics from
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
+ * By: Marissa Okoli
+ * 5/2/18
  */
 
 import React, { Component } from 'react';
 import {
-  Platform,
+  // Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  FlatList,
 } from 'react-native';
 
-const instructions = Platform.select({
+import { convos } from './js/dummydata';
+import ConvoContainer from './js/components/ConvoContainer'
+import InputPopup from './js/components/InputPopup'
+
+/* const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+type Props = {}; */
+
+export default class App extends Component/*<Props>*/ {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.title}>
+            Pocket Politics
+          </Text>
+        </View>
+        <FlatList
+          keyExtractor = {(item, index) => index.toString()}
+          data={convos}
+          renderItem={({item}) => <ConvoContainer convo={item} key={item.index} />}
+        />
+        <InputPopup />
+        {/* <ScrollView
+          contentContainerStyle={styles.scrollContent}
+		  // Hide all scroll indicators
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+        >
+          {convos.map((convo, index) => <ConvoContainer
+          convo={convo}
+          onOpen={this.expConvo}
+          key={index}
+          />)}
+        </ScrollView>  */}
+      </View>
+      /* <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
@@ -33,52 +67,29 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
-      </View>
+      </View> */
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#555',
+    position: "relative",
+  },
+  header: {
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    padding: 5,
+    borderWidth: 15,
+    borderRadius: 2,
+    borderColor: '#555',
+    backgroundColor: "#ddd",
+    borderTopWidth: 0,
+    borderRightWidth: 0,
+    borderLeftWidth: 0,
   },
-  welcome: {
+  title: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    padding: 10,
   },
 });
-
-/* import React from 'react';
-import {  Navigator } from 'react-native';
-
-import Feed from './src/component/Feed';
-
-const RouteMapper = (route, navigator) => {
-  if (route.name === 'feed') {
-    return <Feed navigator={navigator} />;
-  }
-};
-
-export default class App extends React.Component {
-  render() {
-    return (
-      <Navigator
-        // Default to feed route
-        initialRoute={{ name: 'feed' }}
-        // Use FloatFromBottom transition between screens
-        configureScene={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
-        // Pass a route mapper functions
-        renderScene={RouteMapper}
-      />
-    );
-  }
-} */

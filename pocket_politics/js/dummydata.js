@@ -1,72 +1,135 @@
+const commThreads = [
+  {
+  topic: 'La La Land',
+  claps: 2,
+  callins: 4,
+},
+{
+  topic: 'Heyyo',
+  claps: 7,
+  callins: 7,
+},
+];
+
 export const convos = [
     {
       topic: 'La La Land',
-      author: 'henry',
       claps: 2,
       callins: 4,
-      comments,
+      comments: commThreads,
     },
     {
         topic: 'My friend',
-        author: 'jill',
         claps: 6,
         callins: 2,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Whatsup',
-        author: 'mary',
         claps: 5,
         callins: 3,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Heyyo',
-        author: 'fred',
         claps: 7,
         callins: 7,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Why Me?',
-        author: 'bob',
         claps: 10,
         callins: 400,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'If Only',
-        author: 'todd',
         claps: 82,
         callins: 40,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Say Whhaaaa',
-        author: 'angie',
         claps: 25,
         callins: 6,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Mhmmm',
-        author: 'sandy',
         claps: 20,
         callins: 9,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Raaaaa',
-        author: 'chris',
         claps: 28,
         callins: 43,
-        comments,
+        comments: commThreads,
       },
       {
         topic: 'Fwee',
-        author: 'henry',
         claps: 21,
         callins: 42,
-        comments,
+        comments: commThreads,
       },
     ];
+
+    /* export const convosP = [
+       {
+          topic: 'My friend',
+          claps: 6,
+          callins: 2,
+          comments,
+        },
+        {
+          topic: 'Whatsup',
+          claps: 5,
+          callins: 3,
+          comments,
+        },
+        {
+          topic: 'If Only',
+          claps: 82,
+          callins: 40,
+          comments,
+        },
+        {
+          topic: 'Say Whhaaaa',
+          claps: 25,
+          callins: 6,
+          comments,
+        },
+        {
+          topic: 'Mhmmm',
+          claps: 20,
+          callins: 9,
+          comments,
+        },
+        {
+          topic: 'Raaaaa',
+          claps: 28,
+          callins: 43,
+          comments,
+        },
+      ];
+
+      export const convosD = [
+          {
+            topic: 'Whatsup',
+            claps: 5,
+            callins: 3,
+            comments,
+          },
+          {
+            topic: 'If Only',
+            claps: 82,
+            callins: 40,
+            comments,
+          },
+          {
+            topic: 'If I had you',
+            claps: 21,
+            callins: 42,
+            comments,
+          },
+        ]; */
