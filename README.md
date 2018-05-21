@@ -15,20 +15,30 @@ Code Base Structure
     - % App.js (main view container for front-end app, loads other views)
     - % Index.js (registers App.js as main view container for app)
 - | PocketPolitics (back-end codebase hosted on Microsoft Azure platform)
+    - | environment
+    - | routes
+        - % index.js
+    - % app.js
+    - % db.js
+    - % topic-model.js (defines topic schema)
+    - % topic-service.js (defines topic db services)
 
 
 Cleanup and Present Errors
 --------------------------
 ### Front-end
 - Clean up unnecessary css declarations and styles
+- Remove unused/commented code
 - Topic colors are randomly generated
 - Not sure how autorefresh works for new comments/topics/claps/callins added by other users when this user has not updated anything themselves triggering such - investigate
 - Right now, App.js does too much work. Should be turned into a navigator which in turn handles component pages made up of header, feed (ConvoContainers list), and InputPopup; as well as profile and other types as they are added
+- claps and callins have similar functionality and states, but have two different event handlers
 
 ### Back-end
 - Tighten up security - triple check that Express.js does in fact sanitize inputs automatically
 - Look into known npm dependency security vulnerability
 - Add content monitoring
+- Significant amounts of boilerplate code can be cut down
 
 Future Plans
 ------------

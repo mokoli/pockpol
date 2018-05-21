@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from 'react-native';
 
 // Get screen dimensions
@@ -12,6 +13,25 @@ const { width, height } = Dimensions.get('window');
 const colorArray = ["#93d2c7", "#ed4d61", "#b778b5", "#f8b920", "#08aadd"];
 
 export default class ConvoContainer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { pushOpacClap: 1, pushOpacCall: 1 }
+  }
+
+  onPressClap = () => {
+    this.setState({
+      pushOpacClap: this.state.pushOpacClap==1 ? 0.4 : 1
+      // add server update call
+    })
+  }
+
+  onPressCall = () => {
+    this.setState({
+      pushOpacCall: this.state.pushOpacCall==1 ? 0.4 : 1
+      // add server update call
+    })
+  }
+
   render() {
     const { convo, convo: { topic, claps, callins }} = this.props;
     return (
@@ -20,12 +40,18 @@ export default class ConvoContainer extends React.Component {
           }]}>
           <Text style={styles.topic}>{topic}</Text>
           <View style={styles.votes}>
-            <Image source={require('./../img/claps.png')}
-              style={styles.icons} />
-            <Text style={styles.voteText}>{claps}</Text>
-            <Image source={require('./../img/callins.png')}
-              style={styles.icons} />  
-            <Text style={styles.voteText}>{callins}</Text>
+            <TouchableOpacity style={styles.touchableIcon}
+              onPress={this.onPressClap}>
+              <Image source={require('./../img/claps.png')}
+                style={[styles.icons, {opacity: this.state.pushOpacClap}]} />
+              <Text style={styles.voteText}>{claps}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.touchableIcon}
+              onPress={this.onPressCall}>
+              <Image source={require('./../img/callins.png')}
+                style={[styles.icons, {opacity: this.state.pushOpacCall}]} />  
+              <Text style={styles.voteText}>{callins}</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -56,6 +82,12 @@ icons: {
   width: 30,
   height: 30,
   marginRight: 3,
+},
+touchableIcon: {
+  flexDirection: "row",
+  flexWrap: "nowrap",
+  justifyContent: "flex-end",
+  alignItems: "center",
 },
 votes: {
   flexDirection: "row",

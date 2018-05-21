@@ -28,7 +28,7 @@ export default class InputPopup extends React.Component {
       <View style={styles.container}>
         <TextInput style={[styles.tinput, {display: this.state.vis}]}
           placeholder="   What to say?"
-          //onSubmitEditing={(text) => boo}
+          // onSubmitEditing={(text) => boo}
         />
         <TouchableOpacity style={styles.writeButton} onPress={this.onPress}>
           <Image
